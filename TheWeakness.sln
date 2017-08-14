@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheWeakness.CSharp.Plugins", "TheWeakness.CSharp.Plugins.csproj", "{4021E441-B0D2-FCE2-D3BD-03A300F60138}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheWeakness.CSharp", "TheWeakness.CSharp.csproj", "{210217D1-D194-B908-1D5E-12003ADDD21B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheWeakness.CSharp.Editor.Plugins", "TheWeakness.CSharp.Editor.Plugins.csproj", "{0F01B29C-28F9-6A6C-DC8D-B7774F9226A4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4021E441-B0D2-FCE2-D3BD-03A300F60138}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4021E441-B0D2-FCE2-D3BD-03A300F60138}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4021E441-B0D2-FCE2-D3BD-03A300F60138}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4021E441-B0D2-FCE2-D3BD-03A300F60138}.Release|Any CPU.Build.0 = Release|Any CPU
+		{210217D1-D194-B908-1D5E-12003ADDD21B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{210217D1-D194-B908-1D5E-12003ADDD21B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{210217D1-D194-B908-1D5E-12003ADDD21B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{210217D1-D194-B908-1D5E-12003ADDD21B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F01B29C-28F9-6A6C-DC8D-B7774F9226A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F01B29C-28F9-6A6C-DC8D-B7774F9226A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F01B29C-28F9-6A6C-DC8D-B7774F9226A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F01B29C-28F9-6A6C-DC8D-B7774F9226A4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
