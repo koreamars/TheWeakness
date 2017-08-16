@@ -4,19 +4,37 @@ using UnityEngine;
 
 public class MainController : MonoBehaviour {
 
-    void Start () {
-        
+    private GameObject _canvasObj;
+    private ViewFactory _viewFactory;
+
+    private GameObject _loginView;
+    private GameObject _selectView;
+    
+    public void Init()
+    {
+        _canvasObj = GameObject.Find("Canvas") as GameObject;
+        _viewFactory = ViewFactory.GetInstance();
     }
 	
 	public void ShowLoginView()
     {
-        GameObject canvas = GameObject.Find("Canvas") as GameObject;
-        GameObject prefab = Resources.Load("Prefabs/LoginField") as GameObject;
-
-        GameObject loginField = MonoBehaviour.Instantiate(prefab) as GameObject;
-        loginField.name = "LoginField"; // name을 변경
-        loginField.transform.parent = canvas.transform;
-        loginField.transform.localScale = new Vector3(1f, 1f, 1f);
+        Logger.Log("ShowLoginView ");
+        LoginFieldModel loginFieldModel = new LoginFieldModel();
+        loginFieldModel.LoginClickCall = _firstLoginCheck;
+        _loginView = _viewFactory.GetView(ViewType.LoginField, loginFieldModel) as GameObject;
+        _loginView.name = "LoginField"; // name을 변경
+        _loginView.transform.parent = _canvasObj.transform;
+        _loginView.transform.localScale = new Vector3(1f, 1f, 1f);
 
     }
+
+    private void _firstLoginCheck(string type)
+    {
+        Logger.Log("_firstLoginCheck " + type);
+
+        Destroy(_loginView);
+        
+    }
+    
+    
 }

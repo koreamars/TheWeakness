@@ -41,7 +41,17 @@ public class LoginView : BaseView {
     {
         Logger.Log("LoginView._OutMotion");
         
-        iTween.MoveTo(FaceBookBtn, iTween.Hash("x", -7, "time", 1));
+        iTween.MoveTo(FaceBookBtn, iTween.Hash("x", -7, "time", 1, "oncomplete", "_OutMotionEnd", "oncompletetarget", this.gameObject));
         iTween.MoveTo(GuestBtn, iTween.Hash("x", 7, "time", 1));
+    }
+
+    private void _OutMotionEnd()
+    {
+        Logger.Log("LoginView._OutMotionEnd ");
+        LoginFieldModel loginFieldModel = _baseModel as LoginFieldModel;
+        if(loginFieldModel.LoginClickCall != null)
+        {
+            loginFieldModel.LoginClickCall("test");
+        }
     }
 }
