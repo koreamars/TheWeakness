@@ -12,7 +12,18 @@ public class MainManager : MonoBehaviour
 
         _mainController = new MainController();
         _mainController.Init();
-        _mainController.ShowLoginView();
-        
+        _mainController.ShowLoginView(_characterSelect);
+
+        //_showLobby();
+    }
+
+    private void _characterSelect()
+    {
+        _mainController.ShowChacraterSelectView(_showLobby);
+    }
+
+    private void _showLobby()
+    {
+        _mainController.ShowLobby();
     }
 }

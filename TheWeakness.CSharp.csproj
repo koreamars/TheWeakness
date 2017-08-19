@@ -126,11 +126,18 @@
     <Compile Include="Assets\Src\Logger.cs" />
     <Compile Include="Assets\Src\MainManager.cs" />
     <Compile Include="Assets\Src\Model\BaseModel.cs" />
-    <Compile Include="Assets\Src\Model\LoginFieldModel.cs" />
+    <Compile Include="Assets\Src\Model\CharacterViewModel.cs" />
+    <Compile Include="Assets\Src\Model\LobbyViewModel.cs" />
+    <Compile Include="Assets\Src\Model\LoginViewModel.cs" />
+    <Compile Include="Assets\Src\Model\SelectViewModel.cs" />
+    <Compile Include="Assets\Src\Model\TopUIViewModel.cs" />
     <Compile Include="Assets\Src\Model\ViewModel.cs" />
     <Compile Include="Assets\Src\View\BaseView.cs" />
+    <Compile Include="Assets\Src\View\CharacterView.cs" />
+    <Compile Include="Assets\Src\View\LobbyView.cs" />
     <Compile Include="Assets\Src\View\LoginView.cs" />
     <Compile Include="Assets\Src\View\SelectView.cs" />
+    <Compile Include="Assets\Src\View\TopUIView.cs" />
     <Compile Include="Assets\Src\ViewFactory.cs" />
     <Compile Include="Assets\Src\ViewType.cs" />
   </ItemGroup>

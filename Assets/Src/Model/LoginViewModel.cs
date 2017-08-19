@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System;
 
-public class LoginFieldModel : ViewModel {
+public class LoginViewModel : ViewModel {
 
     public Action<string> LoginClickCall = null;
 
