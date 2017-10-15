@@ -6,16 +6,30 @@ public class LoginView : BaseView {
 
     public GameObject FaceBookBtn;
     public GameObject GuestBtn;
-    
+
+	// Use this for initialization
+	void Start () {
+
+        //iTween.MoveTo(FaceBookBtn, iTween.Hash("x", 0, "time", 1));
+        //iTween.MoveTo(GuestBtn, iTween.Hash("x", 0, "time", 1));
+
+    }
+	
+	// Update is called once per frame
+	void Update () {
+		
+	}
+
     public override void SetData(BaseModel baseModel)
     {
+        Logger.Log("LoginView.SetData");
         base.SetData(baseModel);
     }
 
     public override void Show()
     {
+        Logger.Log("LoginView.Show");
         base.Show();
-
         iTween.MoveTo(FaceBookBtn, iTween.Hash("x", 0, "time", 1));
         iTween.MoveTo(GuestBtn, iTween.Hash("x", 0, "time", 1));
     }
@@ -36,17 +50,7 @@ public class LoginView : BaseView {
     {
         Logger.Log("LoginView._OutMotion");
         
-        iTween.MoveTo(FaceBookBtn, iTween.Hash("x", -7, "time", 1, "oncomplete", "_OutMotionEnd", "oncompletetarget", this.gameObject));
+        iTween.MoveTo(FaceBookBtn, iTween.Hash("x", -7, "time", 1));
         iTween.MoveTo(GuestBtn, iTween.Hash("x", 7, "time", 1));
-    }
-
-    private void _OutMotionEnd()
-    {
-        Logger.Log("LoginView._OutMotionEnd ");
-        LoginViewModel loginViewModel = _baseModel as LoginViewModel;
-        if(loginViewModel.LoginClickCall != null)
-        {
-            loginViewModel.LoginClickCall("test");
-        }
     }
 }

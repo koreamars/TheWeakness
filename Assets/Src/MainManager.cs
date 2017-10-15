@@ -11,19 +11,10 @@ public class MainManager : MonoBehaviour
     {
 
         _mainController = new MainController();
-        _mainController.Init();
-        _mainController.ShowLoginView(_characterSelect);
+        
+        GameObject loginViewObj = ViewFactory.GetInstance().getViewPrefab(ViewType.LoginField);
+        LoginView loginView = loginViewObj.GetComponent<LoginView>();
+        loginView.Show();
 
-        //_showLobby();
-    }
-
-    private void _characterSelect()
-    {
-        _mainController.ShowChacraterSelectView(_showLobby);
-    }
-
-    private void _showLobby()
-    {
-        _mainController.ShowLobby();
     }
 }

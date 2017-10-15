@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SelectView : BaseView {
-    
+
+    public GameObject CharacterImg;
     public GameObject LeftArrow;
     public GameObject RightArrow;
     public GameObject SelectBtn;
@@ -17,7 +18,15 @@ public class SelectView : BaseView {
     {
         Logger.Log("SelectView.Show");
         base.Show();
-        
+
+        iTween.MoveTo(CharacterImg, iTween.Hash("y", 0, "time", 1f));
+        iTween.MoveTo(this.gameObject, iTween.Hash("y", 0, "time", 0.5f, "oncomplete", "_showArrow"));
+    }
+
+    private void _showArrow()
+    {
+        Logger.Log("SelectView._showArrow");
+
         iTween.MoveTo(LeftArrow, iTween.Hash("x", -2.7f, "time", 1));
         iTween.MoveTo(RightArrow, iTween.Hash("x", 2.7f, "time", 1));
 
@@ -39,27 +48,12 @@ public class SelectView : BaseView {
     public void OnArrowBtn(string type)
     {
         Logger.Log("SelectView.OnArrowBtn");
-        
+
     }
 
     public void OnSelectBtn()
     {
         Logger.Log("SelectView.OnSelectBtn");
-
-        iTween.MoveTo(LeftArrow, iTween.Hash("x", -7f, "time", 1));
-        iTween.MoveTo(RightArrow, iTween.Hash("x", 7f, "time", 1));
-
-        iTween.MoveTo(SelectBtn, iTween.Hash("y", -7f, "time", 1));
-        iTween.MoveTo(this.gameObject, iTween.Hash("y", 0, "time", 0.5f, "oncomplete", "_endView"));
-    }
-
-    private void _endView() { 
-
-        SelectViewModel selectViewModel = _baseModel as SelectViewModel;
-        if(selectViewModel.selectClickCall != null)
-        {
-            selectViewModel.selectClickCall("test");
-        }
 
     }
     
