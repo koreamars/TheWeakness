@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-class BasePopup : BaseView
-{
+public class BasePopup : BaseView {
+    
+
 }

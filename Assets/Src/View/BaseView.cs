@@ -4,28 +4,17 @@ using UnityEngine;
 
 public class BaseView : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public bool isUnitTest = true;
+    protected BaseViewModel _baseModel = null;
 
-    public virtual void SetData(BaseModel baseModel)
+	virtual public void SetData(BaseViewModel baseModel)
     {
-
+        Logger.Log("BaseView.SetData");
+        _baseModel = baseModel;
     }
 
-    public virtual void Show()
+    virtual public void Show()
     {
-
-    }
-
-    public virtual void Hide()
-    {
-
+        Logger.Log("BaseView.Show");
     }
 }

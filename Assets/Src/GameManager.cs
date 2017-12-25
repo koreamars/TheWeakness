@@ -17,9 +17,11 @@ public class GameManager : MonoBehaviour {
         return instance;
     }
 
-    public void Test()
+    public void Init()
     {
-        Logger.Log("Test");
+        Logger.Log("GameManager.Init");
+        
+
     }
-    
+
 }

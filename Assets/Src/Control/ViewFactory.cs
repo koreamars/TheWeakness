@@ -17,24 +17,26 @@ public class ViewFactory : MonoBehaviour {
         return instance;
     }
 
-    public GameObject getViewPrefab(string type, BaseModel baseModel = null)
+    public GameObject GetViewObj(string type, BaseViewModel baseModel)
     {
-        Logger.Log("ViewFactory.getViewPrefab type:" + type);
-        GameObject canvas = GameObject.Find("Canvas") as GameObject;
+        Logger.Log("ViewFactory.GetViewObj " + baseModel);
+        
         GameObject prefab = Resources.Load("Prefabs/" + type) as GameObject;
+        GameObject baseViewObj = MonoBehaviour.Instantiate(prefab) as GameObject;
+        GameObject canvas = GameObject.Find("Canvas") as GameObject;
+        Logger.Log("baseViewObj " + baseViewObj);
+        if (baseViewObj != null)
+        {
+            BaseView baseView = baseViewObj.GetComponent<BaseView>();
+            baseView.isUnitTest = false;
+            baseView.SetData(baseModel);
 
-        Logger.Log("ViewFactory.getViewPrefab prefab:" + prefab);
-        GameObject fieldObject = MonoBehaviour.Instantiate(prefab) as GameObject;
-        fieldObject.name = type; // name을 변경
-        fieldObject.transform.parent = canvas.transform;
-        fieldObject.transform.localScale = new Vector3(1f, 1f, 1f);
+            RectTransform myRectTransform = baseViewObj.GetComponent<RectTransform>();
+            myRectTransform.SetParent(canvas.GetComponent<RectTransform>());
+            myRectTransform.localScale = new Vector3(1, 1, 1);
+            Logger.Log("myRectTransform.localScale " + myRectTransform.localScale);
+        }
 
-        LoginView loginView = fieldObject.GetComponent<LoginView>();
-        if(baseModel != null) loginView.SetData(baseModel);
-        loginView.Show();
-
-        return fieldObject;
+        return baseViewObj;
     }
-
-
 }

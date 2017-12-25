@@ -1,5 +1,6 @@
-﻿public static class ViewType
-{
-    public const string LoginField = "LoginField";
-    public const string SelectView = "SelectView";
+﻿using System.Collections;
+using System.Collections.Generic;
+
+static public class ViewType {
+    public const string LOBBY_MAINBTNS = "LobbyMainBtns";
 }

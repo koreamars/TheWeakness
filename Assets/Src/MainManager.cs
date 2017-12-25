@@ -2,19 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MainManager : MonoBehaviour
-{
+public class MainManager : MonoBehaviour {
 
-    private MainController _mainController;
+	// Use this for initialization
+	void Start () {
 
-    void Start()
-    {
+        Logger.Log("MainManager.Start");
 
-        _mainController = new MainController();
-        
-        GameObject loginViewObj = ViewFactory.GetInstance().getViewPrefab(ViewType.LoginField);
-        LoginView loginView = loginViewObj.GetComponent<LoginView>();
-        loginView.Show();
-
-    }
+        LobbyMainBtnsModel mainBtnModel = new LobbyMainBtnsModel();
+                
+        ViewFactory.GetInstance().GetViewObj(ViewType.LOBBY_MAINBTNS, mainBtnModel);
+	}
+	
+	// Update is called once per frame
+	void Update () {
+		
+	}
 }
