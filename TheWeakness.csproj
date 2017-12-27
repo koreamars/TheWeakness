@@ -322,12 +322,14 @@
     <Compile Include="Assets\Src\Model\BaseViewModel.cs" />
     <Compile Include="Assets\Src\Model\KeyPadFieldModel.cs" />
     <Compile Include="Assets\Src\Model\LobbyMainBtnsModel.cs" />
+    <Compile Include="Assets\Src\Model\MyW​eakFieldModel.cs" />
     <Compile Include="Assets\Src\Type\SceneType.cs" />
     <Compile Include="Assets\Src\Type\ViewType.cs" />
     <Compile Include="Assets\Src\View\BasePopup.cs" />
     <Compile Include="Assets\Src\View\BaseView.cs" />
     <Compile Include="Assets\Src\View\KeyPadField.cs" />
     <Compile Include="Assets\Src\View\LobbyMainBtns.cs" />
+    <Compile Include="Assets\Src\View\MyW​eakField.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Plugins\Pixelplacement\iTween\ReadMe!\ReadMe!.txt" />

@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour {
 
     private GameObject lobbyMainBtns = null;
     private GameObject keyPadField = null;
+    private GameObject myWeaknessField = null;
 
     public void Init()
     {
@@ -46,6 +47,9 @@ public class GameManager : MonoBehaviour {
             case SceneType.READY_FOR_BATTLE:
                 KeyPadFieldModel keyPadFieldModel = new KeyPadFieldModel();
                 keyPadField = ViewFactory.GetInstance().GetViewObj(ViewType.KEY_PAD_FIELD, keyPadFieldModel);
+
+                MyW​eakFieldModel myW​eakFieldModel = new MyW​eakFieldModel();
+                myWeaknessField = ViewFactory.GetInstance().GetViewObj(ViewType.MY_WEAKNESS_FIELD, myW​eakFieldModel);
                 break;
         }
 

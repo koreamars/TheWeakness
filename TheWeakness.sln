@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2017
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheWeakness.Plugins", "TheWeakness.Plugins.csproj", "{960E8755-E176-EB41-6B71-07FE7CE362DB}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheWeakness", "TheWeakness.csproj", "{8615CAE6-F179-B81F-AE21-262AD69A34FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheWeakness.Plugins", "TheWeakness.Plugins.csproj", "{960E8755-E176-EB41-6B71-07FE7CE362DB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheWeakness.Editor.Plugins", "TheWeakness.Editor.Plugins.csproj", "{6CC36FC9-E796-1FCC-99C4-9733D163ACE7}"
 EndProject
@@ -13,14 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{960E8755-E176-EB41-6B71-07FE7CE362DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{960E8755-E176-EB41-6B71-07FE7CE362DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{960E8755-E176-EB41-6B71-07FE7CE362DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{960E8755-E176-EB41-6B71-07FE7CE362DB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8615CAE6-F179-B81F-AE21-262AD69A34FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8615CAE6-F179-B81F-AE21-262AD69A34FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8615CAE6-F179-B81F-AE21-262AD69A34FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8615CAE6-F179-B81F-AE21-262AD69A34FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{960E8755-E176-EB41-6B71-07FE7CE362DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{960E8755-E176-EB41-6B71-07FE7CE362DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{960E8755-E176-EB41-6B71-07FE7CE362DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{960E8755-E176-EB41-6B71-07FE7CE362DB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6CC36FC9-E796-1FCC-99C4-9733D163ACE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6CC36FC9-E796-1FCC-99C4-9733D163ACE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6CC36FC9-E796-1FCC-99C4-9733D163ACE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
