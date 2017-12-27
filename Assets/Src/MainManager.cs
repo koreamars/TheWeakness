@@ -8,10 +8,8 @@ public class MainManager : MonoBehaviour {
 	void Start () {
 
         Logger.Log("MainManager.Start");
-
-        LobbyMainBtnsModel mainBtnModel = new LobbyMainBtnsModel();
-                
-        ViewFactory.GetInstance().GetViewObj(ViewType.LOBBY_MAINBTNS, mainBtnModel);
+        
+        GameManager.GetInstance().SceneUpdate(SceneType.LOBBY);
 	}
 	
 	// Update is called once per frame
