@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class KeyPadField : BaseView {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+	public void OnSendBtnClick()
+    {
+        Logger.Log("KeyPadField.OnSendBtnClick");
+        KeyPadFieldModel currentModel = _baseModel as KeyPadFieldModel;
+
+        if(currentModel.sendBtnCall != null)
+        {
+            currentModel.sendBtnCall();
+        }
+    }
 }

@@ -17,9 +17,11 @@ public class GameManager : MonoBehaviour {
         return instance;
     }
 
-    private GameObject lobbyMainBtns = null;
-    private GameObject keyPadField = null;
-    private GameObject myWeaknessField = null;
+    private string _prevSceneType = "";
+    private GameObject _lobbyMainBtns = null;
+    private GameObject _keyPadField = null;
+    private GameObject _myWeaknessField = null;
+    private GameObject _rivalWeaknessField = null;
 
     public void Init()
     {
@@ -32,38 +34,53 @@ public class GameManager : MonoBehaviour {
     {
         Logger.Log("GameManager.SceneUpdate sceneType:" + sceneType);
 
-        Destroy(lobbyMainBtns);
-        Destroy(keyPadField);
+        Destroy(_lobbyMainBtns);
+        if (_prevSceneType != SceneType.READY_FOR_BATTLE) Destroy(_keyPadField);
+        if (_prevSceneType != SceneType.READY_FOR_BATTLE) Destroy(_myWeaknessField);
 
         switch (sceneType)
         {
             case SceneType.LOBBY:
                 LobbyMainBtnsModel mainBtnModel = new LobbyMainBtnsModel();
-                mainBtnModel.userMatchClickCall = UserMatchFunc;
-                mainBtnModel.friendMatchClickCall = FriendMatchFunc;
-                lobbyMainBtns = ViewFactory.GetInstance().GetViewObj(ViewType.LOBBY_MAINBTNS, mainBtnModel);
+                mainBtnModel.userMatchClickCall = _UserMatchFunc;
+                mainBtnModel.friendMatchClickCall = _FriendMatchFunc;
+                _lobbyMainBtns = ViewFactory.GetInstance().GetViewObj(ViewType.LOBBY_MAINBTNS, mainBtnModel);
 
                 break;
             case SceneType.READY_FOR_BATTLE:
                 KeyPadFieldModel keyPadFieldModel = new KeyPadFieldModel();
-                keyPadField = ViewFactory.GetInstance().GetViewObj(ViewType.KEY_PAD_FIELD, keyPadFieldModel);
+                keyPadFieldModel.sendBtnCall = _SendMyWeakFunc;
+                _keyPadField = ViewFactory.GetInstance().GetViewObj(ViewType.KEY_PAD_FIELD, keyPadFieldModel);
 
                 MyW​eakFieldModel myW​eakFieldModel = new MyW​eakFieldModel();
-                myWeaknessField = ViewFactory.GetInstance().GetViewObj(ViewType.MY_WEAKNESS_FIELD, myW​eakFieldModel);
+                _myWeaknessField = ViewFactory.GetInstance().GetViewObj(ViewType.MY_WEAK_FIELD, myW​eakFieldModel);
+                break;
+            case SceneType.DURING_BATTLE:
+                RiW​eakFieldModel rivalWeakFieldModel = new RiW​eakFieldModel();
+                _rivalWeaknessField = ViewFactory.GetInstance().GetViewObj(ViewType.RIVAL_WEAK_FIELD, rivalWeakFieldModel);
+
                 break;
         }
 
+        _prevSceneType = sceneType;
+
     }
 
-    private void UserMatchFunc()
+    private void _UserMatchFunc()
     {
-        Logger.Log("GameManager.UserMatchFunc");
+        Logger.Log("GameManager._UserMatchFunc");
         SceneUpdate(SceneType.READY_FOR_BATTLE);
     }
 
-    private void FriendMatchFunc()
+    private void _FriendMatchFunc()
     {
-        Logger.Log("GameManager.FriendMatchFunc");
+        Logger.Log("GameManager._FriendMatchFunc");
+    }
+
+    private void _SendMyWeakFunc()
+    {
+        Logger.Log("GameManager._SendMyWeakFunc");
+        SceneUpdate(SceneType.DURING_BATTLE);
     }
          
 

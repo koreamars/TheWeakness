@@ -20,10 +20,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 947
-  m_MinSize: {x: 911, y: 371}
-  m_MaxSize: {x: 22006, y: 14021}
+  m_MinSize: {x: 909, y: 350}
+  m_MaxSize: {x: 22004, y: 14000}
   vertical: 0
-  controlID: 2704
+  controlID: 4571
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -121,10 +121,10 @@ MonoBehaviour:
     y: 0
     width: 1338
     height: 947
-  m_MinSize: {x: 634, y: 371}
-  m_MaxSize: {x: 18004, y: 14021}
+  m_MinSize: {x: 634, y: 350}
+  m_MaxSize: {x: 18004, y: 14000}
   vertical: 1
-  controlID: 2705
+  controlID: 4572
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -149,7 +149,7 @@ MonoBehaviour:
   m_MinSize: {x: 634, y: 250}
   m_MaxSize: {x: 18004, y: 10000}
   vertical: 0
-  controlID: 2706
+  controlID: 4573
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -204,9 +204,9 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 
-    m_LastClickedID: 0
-    m_ExpandedIDs: 462affff0e39ffffa83effff8046ffff3648ffffd490ffffa094ffff149affff5cefffff86fbffff00000000422a0000122d00004e340000
+    m_SelectedIDs: 385cffff
+    m_LastClickedID: -41928
+    m_ExpandedIDs: 0ae2feffec81ffff2088ffff6095ffff609dfffffea7fffffac4fffffcc4ffff4adeffff9efbffff000000001e300000da31000066320000e6330000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -225,7 +225,7 @@ MonoBehaviour:
       m_ClientGUIView: {fileID: 5}
     m_SearchString: 
   m_ExpandedScenes:
-  - Intro
+  - UnitView
   m_CurrenRootInstanceID: 0
   m_Locked: 0
   m_CurrentSortingName: TransformSorting
@@ -288,9 +288,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 0.07268184, y: 0.90222925, z: 90.00126}
+    m_Target: {x: -0.1394861, y: -0.20275208, z: 89.99898}
     speed: 2
-    m_Value: {x: 0.07268184, y: 0.90222925, z: 90.00126}
+    m_Value: {x: -0.1394861, y: -0.20275208, z: 89.99898}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -318,9 +318,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 6.6121616
+    m_Target: 6.909709
     speed: 2
-    m_Value: 6.6121616
+    m_Value: 6.909709
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -396,19 +396,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Scene
+    - Assets/Src/View/Popup
   m_ViewMode: 1
-  m_StartGridSize: 60
+  m_StartGridSize: 96
   m_LastFolders:
-  - Assets/Scene
-  m_LastFoldersGridSize: 60
+  - Assets/Src/View/Popup
+  m_LastFoldersGridSize: 96
   m_LastProjectPath: F:\11F1002\D\work\00-MakeGame\09-TheWeakness\app\TheWeakness
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: ba280000
-    m_LastClickedID: 10426
-    m_ExpandedIDs: 000000002628000042280000542800006e28000076280000ce280000d42800005829000000ca9a3bffffff7f
+    m_SelectedIDs: 8e350000
+    m_LastClickedID: 13710
+    m_ExpandedIDs: 000000001a280000362800004828000050280000622800006a280000b4280000cc280000d22800005629000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -436,7 +436,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000002628000042280000542800006e28000076280000ce280000d42800005829000000ca9a3bffffff7f
+    m_ExpandedIDs: 000000001a280000362800004828000050280000622800006a280000b4280000cc280000d22800005629000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -461,9 +461,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 
-    m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_SelectedInstanceIDs: 385cffff
+    m_LastClickedInstanceID: -41928
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: 00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -489,7 +489,7 @@ MonoBehaviour:
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
     m_ScrollPosition: {x: 0, y: 0}
-    m_GridSize: 60
+    m_GridSize: 96
   m_DirectoriesAreaWidth: 182
 --- !u!114 &11
 MonoBehaviour:
@@ -509,8 +509,8 @@ MonoBehaviour:
     y: 646
     width: 1338
     height: 301
-  m_MinSize: {x: 102, y: 121}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 12}
   m_Panes:
   - {fileID: 12}
@@ -561,8 +561,8 @@ MonoBehaviour:
     y: 0
     width: 582
     height: 947
-  m_MinSize: {x: 277, y: 71}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
