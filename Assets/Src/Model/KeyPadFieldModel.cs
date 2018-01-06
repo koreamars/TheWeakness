@@ -4,5 +4,5 @@ using System;
 
 public class KeyPadFieldModel : BaseViewModel
 {
-    public Action sendBtnCall = null;
+   
 }

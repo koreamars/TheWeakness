@@ -17,13 +17,13 @@ public class ViewFactory : MonoBehaviour {
         return instance;
     }
 
-    public GameObject GetViewObj(string type, BaseViewModel baseModel)
+    public GameObject GetViewObj(GameObject parent, string prefabName, BaseViewModel baseModel)
     {
-        Logger.Log("ViewFactory.GetViewObj " + baseModel);
+        Logger.Log("ViewFactory.GetViewObj " + prefabName);
         
-        GameObject prefab = Resources.Load("Prefabs/" + type) as GameObject;
+        GameObject prefab = Resources.Load("Prefabs/" + prefabName) as GameObject;
         GameObject baseViewObj = MonoBehaviour.Instantiate(prefab) as GameObject;
-        GameObject canvas = GameObject.Find("Canvas") as GameObject;
+
         Logger.Log("baseViewObj " + baseViewObj);
         if (baseViewObj != null)
         {
@@ -32,7 +32,26 @@ public class ViewFactory : MonoBehaviour {
             baseView.SetData(baseModel);
 
             RectTransform myRectTransform = baseViewObj.GetComponent<RectTransform>();
-            myRectTransform.SetParent(canvas.GetComponent<RectTransform>());
+            myRectTransform.SetParent(parent.GetComponent<RectTransform>());
+            myRectTransform.localScale = new Vector3(1, 1, 1);
+            Logger.Log("myRectTransform.localScale " + myRectTransform.localScale);
+        }
+
+        return baseViewObj;
+    }
+
+    public GameObject GetOnlyObjType(GameObject parent, string prefabName)
+    {
+        Logger.Log("ViewFactory.GetOnlyObjType " + prefabName);
+
+        GameObject prefab = Resources.Load("Prefabs/" + prefabName) as GameObject;
+        GameObject baseViewObj = MonoBehaviour.Instantiate(prefab) as GameObject;
+
+        Logger.Log("baseViewObj " + baseViewObj);
+        if (baseViewObj != null)
+        {
+            RectTransform myRectTransform = baseViewObj.GetComponent<RectTransform>();
+            myRectTransform.SetParent(parent.GetComponent<RectTransform>());
             myRectTransform.localScale = new Vector3(1, 1, 1);
             Logger.Log("myRectTransform.localScale " + myRectTransform.localScale);
         }

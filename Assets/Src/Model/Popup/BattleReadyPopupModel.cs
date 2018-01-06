@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 
-public class MyW​eakFieldModel : BaseViewModel
-{
+public class BattleReadyPopupModel : BasePopupModel {
     
 }

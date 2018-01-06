@@ -312,8 +312,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Src\Control\NetController.cs" />
     <Compile Include="Assets\Src\Control\PopupController.cs" />
     <Compile Include="Assets\Src\Control\ViewFactory.cs" />
+    <Compile Include="Assets\Src\GameData.cs" />
     <Compile Include="Assets\Src\GameManager.cs" />
     <Compile Include="Assets\Src\IntroManager.cs" />
     <Compile Include="Assets\Src\Logger.cs" />
@@ -322,16 +324,24 @@
     <Compile Include="Assets\Src\Model\BaseViewModel.cs" />
     <Compile Include="Assets\Src\Model\KeyPadFieldModel.cs" />
     <Compile Include="Assets\Src\Model\LobbyMainBtnsModel.cs" />
-    <Compile Include="Assets\Src\Model\MyW​eakFieldModel.cs" />
+    <Compile Include="Assets\Src\Model\MainViewModel.cs" />
+    <Compile Include="Assets\Src\Model\MyWkFieldModel.cs" />
+    <Compile Include="Assets\Src\Model\Popup\AlertPopupModel.cs" />
+    <Compile Include="Assets\Src\Model\Popup\BattleReadyPopupModel.cs" />
     <Compile Include="Assets\Src\Model\Popup\ResultPopupModel.cs" />
     <Compile Include="Assets\Src\Model\RiW​eakFieldModel.cs" />
+    <Compile Include="Assets\Src\Type\PopupType.cs" />
     <Compile Include="Assets\Src\Type\SceneType.cs" />
     <Compile Include="Assets\Src\Type\ViewType.cs" />
+    <Compile Include="Assets\Src\UserData.cs" />
     <Compile Include="Assets\Src\View\BasePopup.cs" />
     <Compile Include="Assets\Src\View\BaseView.cs" />
     <Compile Include="Assets\Src\View\KeyPadField.cs" />
     <Compile Include="Assets\Src\View\LobbyMainBtns.cs" />
+    <Compile Include="Assets\Src\View\MainView.cs" />
     <Compile Include="Assets\Src\View\MyW​eakField.cs" />
+    <Compile Include="Assets\Src\View\Popup\AlertPopup.cs" />
+    <Compile Include="Assets\Src\View\Popup\BattleReadyPopup.cs" />
     <Compile Include="Assets\Src\View\Popup\ResultPopup.cs" />
     <Compile Include="Assets\Src\View\RivalW​eakField.cs" />
   </ItemGroup>
