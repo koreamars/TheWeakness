@@ -12,6 +12,7 @@ public class ViewFactory : MonoBehaviour {
         {
             container = new GameObject();
             container.name = "ViewFactory";
+            DontDestroyOnLoad(container);
             instance = container.AddComponent(typeof(ViewFactory)) as ViewFactory;
         }
         return instance;

@@ -9,9 +9,13 @@ public class MainView : BaseView {
     private GameObject _lobbyMainBtnsObj = null;
     private GameObject _keyPadFieldObj = null;
     private GameObject _myWeaknessFieldObj = null;
-    private GameObject _rivalWeaknessField = null;
+    private GameObject _rivalWeaknessFieldObj = null;
+    private GameObject _rivalAttackKeyFObj = null;
+    private GameObject _myAttackKeyFObj = null;
 
     private LobbyMainBtns _lobbyMainBtns = null;
+    private MyAttackKeyF _myAttackKeyF = null;
+    private RivalAttackKeyF _rivalAttackKeyF = null;
 
     public void SceneUpdate(string sceneType)
     {
@@ -20,7 +24,11 @@ public class MainView : BaseView {
         //Destroy(_lobbyMainBtnsObj);
         if (_currSceneType != SceneType.READY_FOR_BATTLE) Destroy(_keyPadFieldObj);
         if (_currSceneType != SceneType.READY_FOR_BATTLE) Destroy(_myWeaknessFieldObj);
-        Destroy(_rivalWeaknessField);
+        Destroy(_rivalWeaknessFieldObj);
+        Destroy(_myAttackKeyFObj);
+        Destroy(_rivalAttackKeyFObj);
+        _myAttackKeyF = null;
+        _rivalAttackKeyF = null;
         
         switch (sceneType)
         {
@@ -38,10 +46,20 @@ public class MainView : BaseView {
                 break;
             case SceneType.DURING_BATTLE:
                 RiW​eakFieldModel rivalWeakFieldModel = new RiW​eakFieldModel();
-                _rivalWeaknessField = ViewFactory.GetInstance().GetViewObj(this.gameObject, ViewType.RIVAL_WEAK_FIELD, rivalWeakFieldModel);
-                RivalW​eakField rivalWeakField = _rivalWeaknessField.GetComponent<RivalW​eakField>();
+                _rivalWeaknessFieldObj = ViewFactory.GetInstance().GetViewObj(this.gameObject, ViewType.RIVAL_WEAK_FIELD, rivalWeakFieldModel);
+                RivalW​eakField rivalWeakField = _rivalWeaknessFieldObj.GetComponent<RivalW​eakField>();
                 rivalWeakField.Show();
                 rivalWeakField.Appear(_BattleAppearEnd);
+
+                MyAttackKeyFModel myAttackKeyFModel = new MyAttackKeyFModel();
+                _myAttackKeyFObj = ViewFactory.GetInstance().GetViewObj(this.gameObject, ViewType.MY_ATTACK_KEY_F, myAttackKeyFModel);
+                _myAttackKeyF = _myAttackKeyFObj.GetComponent<MyAttackKeyF>();
+                _myAttackKeyF.Show();
+
+                RivalAttackKeyFModel rivalAttackKeyFModel = new RivalAttackKeyFModel();
+                _rivalAttackKeyFObj = ViewFactory.GetInstance().GetViewObj(this.gameObject, ViewType.RIVAL_ATTACK_KEY_F, rivalAttackKeyFModel);
+                _rivalAttackKeyF = _rivalAttackKeyFObj.GetComponent<RivalAttackKeyF>();
+                _rivalAttackKeyF.Show();
 
                 MyW​eakField myWeakField = _myWeaknessFieldObj.GetComponent<MyW​eakField>();
                 myWeakField.UpdateWeakRoot(new Vector2(-90, -67));
@@ -59,11 +77,11 @@ public class MainView : BaseView {
 
     }
 
-    public void UpdateMyWeakValue(ArrayList valueList)
+    public void UpdateMyWeakValue()
     {
         Logger.Log("MainView.UpdateMyWeakValue");
         MyW​eakField myWeakField = _myWeaknessFieldObj.GetComponent<MyW​eakField>();
-        myWeakField.UpdateValue(valueList);
+        myWeakField.UpdateValue();
     }
 
     public void ResetMyWeakValue()
@@ -71,6 +89,28 @@ public class MainView : BaseView {
         Logger.Log("MainView.ResetMyWeakValue");
         MyW​eakField myWeakField = _myWeaknessFieldObj.GetComponent<MyW​eakField>();
         myWeakField.ResetValue();
+    }
+
+    public void UpdateAttackKey()
+    {
+        Logger.Log("MainView.UpdateAttackKey");
+        _myAttackKeyF.UpdateValue();
+    }
+
+    public void RivalViewUpdate()
+    {
+        Logger.Log("MainView.RivalViewUpdate");
+
+        RivalW​eakField rivalWeakField = _rivalWeaknessFieldObj.GetComponent<RivalW​eakField>();
+        rivalWeakField.UpdateValue();
+
+        _myAttackKeyF.UpdateValue();
+    }
+
+    public void UpdateRivalAttackKey(ArrayList arrayList)
+    {
+        Logger.Log("MainView.UpdateRivalAttackKey");
+        _rivalAttackKeyF.UpdateAttackKey(arrayList);
     }
 
     private void AppearEnd()
@@ -107,4 +147,5 @@ public class MainView : BaseView {
         GameManager.GetInstance().BattleApearEnd();
 
     }
+    
 }

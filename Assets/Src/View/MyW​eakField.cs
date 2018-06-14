@@ -38,16 +38,30 @@ public class MyW​eakField : BaseView {
         
     }
 
-    public void UpdateValue(ArrayList weakList)
+    public virtual void UpdateValue()
     {
         Logger.Log("MyW​eakField.UpdateValue");
         int idx = 0;
         foreach (GameObject weakValue in WeakValueList)
         {
             Text weakTxt = weakValue.GetComponent<Text>();
-            if(weakList.Count > idx)
+            if(GameData.currBattleRoomModel.currMyWeakList.Count > idx)
             {
-                weakTxt.text = weakList[idx] + "";
+                if (GameData.currBattleRoomModel.currAttackedKeys.Count >= 3)
+                {
+                    // 상대 공격에 의한 판정 보여주기.
+                    int enemyKey = Convert.ToInt32(GameData.currBattleRoomModel.currAttackedKeys[idx]);
+                    int checkValue = Convert.ToInt32(GameData.currBattleRoomModel.currMyWeakList[idx]);
+                    if(checkValue.ToString() == enemyKey.ToString())
+                    {
+                        weakTxt.color = Color.red;
+                    }
+
+
+                } else
+                {
+                    weakTxt.text = GameData.currBattleRoomModel.currMyWeakList[idx] + "";
+                }
             } else
             {
                 weakTxt.text = "?";
@@ -89,7 +103,7 @@ public class MyW​eakField : BaseView {
         _rootRect.anchoredPosition = pos;
     }
 
-    virtual protected void _weakRootMoveEnd()
+    protected virtual void _weakRootMoveEnd()
     {
         Logger.Log("MyW​eakField._weakRootMoveEnd >" + _appearCallback);
         if(_appearCallback != null)

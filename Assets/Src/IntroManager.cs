@@ -39,6 +39,7 @@ public class IntroManager : MonoBehaviour
         Logger.Log("iTween.ValueTo");
 
         GameManager.GetInstance().Init();
+
     }
 
     private void OnColorUpdated(Color color)

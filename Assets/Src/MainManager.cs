@@ -8,7 +8,7 @@ public class MainManager : MonoBehaviour {
 	void Start () {
 
         Logger.Log("MainManager.Start");
-        
+
         GameManager.GetInstance().SceneUpdate(SceneType.LOBBY);
 	}
 	

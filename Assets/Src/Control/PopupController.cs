@@ -13,6 +13,7 @@ public class PopupController : MonoBehaviour {
         {
             container = new GameObject();
             container.name = "PopupController";
+            DontDestroyOnLoad(container);
             instance = container.AddComponent(typeof(PopupController)) as PopupController;
         }
         return instance;
